@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from 'react-native';
 
+import { AppText } from './src/components/AppText';
+
 import { ViewImageScreen } from './src/screens/ViewImageScreen';
 import { WelcomeScreen } from './src/screens/WelcomeScreen';
 
@@ -9,7 +11,7 @@ export const App = () => {
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <ViewImageScreen />
+        <AppText>Hello React Native</AppText>
       </SafeAreaView>
     </>
   );
@@ -18,5 +20,7 @@ export const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
