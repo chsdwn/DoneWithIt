@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { AppText } from './src/components/AppText';
 
@@ -11,7 +12,7 @@ export const App = () => {
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <AppText>Hello React Native</AppText>
+        <Icon name="email" size={200} color="dodgerblue" />
       </SafeAreaView>
     </>
   );
