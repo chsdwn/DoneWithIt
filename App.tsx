@@ -17,7 +17,7 @@ export const App = () => {
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <ListingDetailsScreen />
+        <ViewImageScreen />
       </SafeAreaView>
     </>
   );
