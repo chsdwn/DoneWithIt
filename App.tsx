@@ -12,7 +12,7 @@ export const App = () => {
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <Icon name="email" size={200} color="dodgerblue" />
+        <AppText>Hello React Native</AppText>
       </SafeAreaView>
     </>
   );

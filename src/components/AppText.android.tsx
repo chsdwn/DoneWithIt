@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Platform } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
 interface IProps {
   children: React.ReactNode;
@@ -12,15 +12,7 @@ export const AppText: React.FC<IProps> = ({ children }) => {
 const styles = StyleSheet.create({
   text: {
     color: 'tomato',
-    ...Platform.select({
-      ios: {
-        fontSize: 20,
-        fontFamily: 'Avenir',
-      },
-      android: {
-        fontSize: 18,
-        fontFamily: 'Roboto',
-      },
-    }),
+    fontSize: 18,
+    fontFamily: 'Roboto',
   },
 });
