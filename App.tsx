@@ -6,13 +6,14 @@ import { AppText } from './src/components/AppText';
 
 import { ViewImageScreen } from './src/screens/ViewImageScreen';
 import { WelcomeScreen } from './src/screens/WelcomeScreen';
+import { AppButton } from './src/components/AppButton';
 
 export const App = () => {
   return (
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <AppText>Hello React Native</AppText>
+        <AppButton title="Login" onPress={() => console.log('login button')} />
       </SafeAreaView>
     </>
   );
