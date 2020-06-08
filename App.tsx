@@ -9,7 +9,7 @@ export const App = () => {
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <ViewImageScreen />
+        <WelcomeScreen />
       </SafeAreaView>
     </>
   );
