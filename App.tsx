@@ -13,7 +13,7 @@ export const App = () => {
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <AppButton title="Login" onPress={() => console.log('login button')} />
+        <WelcomeScreen />
       </SafeAreaView>
     </>
   );
@@ -22,7 +22,5 @@ export const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
