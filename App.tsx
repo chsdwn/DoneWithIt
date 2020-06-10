@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { AppButton } from './src/components/AppButton';
 import { AppText } from './src/components/AppText';
 import { Card } from './src/components/Card';
+import { Icon } from './src/components/Icon';
 
 import { ListingDetailsScreen } from './src/screens/ListingDetailsScreen';
 import { MessagesScreen } from './src/screens/MessagesScreen';
@@ -18,7 +18,7 @@ export const App = () => {
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <MessagesScreen />
+        <Icon name="email" size={50} backgroundColor="red" iconColor="white" />
       </SafeAreaView>
     </>
   );
