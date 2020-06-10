@@ -7,6 +7,7 @@ import { Card } from './src/components/Card';
 import { Icon } from './src/components/Icon';
 import { ListItem } from './src/components/ListItem';
 
+import { AccountScreen } from './src/screens/AccountScreen';
 import { ListingDetailsScreen } from './src/screens/ListingDetailsScreen';
 import { MessagesScreen } from './src/screens/MessagesScreen';
 import { ViewImageScreen } from './src/screens/ViewImageScreen';
@@ -19,7 +20,7 @@ export const App = () => {
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <ListItem title="title" ImageComponent={<Icon name="email" />} />
+        <AccountScreen />
       </SafeAreaView>
     </>
   );

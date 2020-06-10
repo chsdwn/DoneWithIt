@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   StyleSheet,
-  Text,
   View,
   ImageURISource,
   Image,
@@ -19,7 +18,7 @@ interface IProps {
   subTitle?: string;
   onPress?: () => void;
   renderRightActions?: () => any;
-  ImageComponent?: any;
+  IconComponent?: any;
 }
 
 export const ListItem: React.FC<IProps> = ({
@@ -28,7 +27,7 @@ export const ListItem: React.FC<IProps> = ({
   subTitle,
   onPress,
   renderRightActions,
-  ImageComponent,
+  IconComponent: ImageComponent,
 }) => {
   return (
     <Swipeable renderRightActions={renderRightActions}>
@@ -50,6 +49,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     padding: 15,
+    backgroundColor: colors.white,
   },
   image: {
     width: 70,
