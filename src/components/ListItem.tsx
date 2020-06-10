@@ -1,24 +1,40 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageURISource, Image } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageURISource,
+  Image,
+  TouchableHighlight,
+} from 'react-native';
 
 import { AppText } from './AppText';
+
 import colors from '../config/colors';
 
 interface IProps {
   image: ImageURISource[];
   title: string;
   subTitle: string;
+  onPress: () => void;
 }
 
-export const ListItem: React.FC<IProps> = ({ image, title, subTitle }) => {
+export const ListItem: React.FC<IProps> = ({
+  image,
+  title,
+  subTitle,
+  onPress,
+}) => {
   return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={image} />
-      <View>
-        <AppText style={styles.title}>{title}</AppText>
-        <AppText style={styles.subTitle}>{subTitle}</AppText>
+    <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
+      <View style={styles.container}>
+        <Image style={styles.image} source={image} />
+        <View>
+          <AppText style={styles.title}>{title}</AppText>
+          <AppText style={styles.subTitle}>{subTitle}</AppText>
+        </View>
       </View>
-    </View>
+    </TouchableHighlight>
   );
 };
 
