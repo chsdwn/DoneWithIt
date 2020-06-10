@@ -24,6 +24,7 @@ const initialMessages: IMessage[] = [
 
 export const MessagesScreen = () => {
   const [messages, setMessages] = useState(initialMessages);
+  const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = (message: IMessage) => {
     setMessages(messages.filter((m) => m.id !== message.id));
@@ -33,6 +34,17 @@ export const MessagesScreen = () => {
     <FlatList
       data={messages}
       ItemSeparatorComponent={ListItemSeperator}
+      refreshing={refreshing}
+      onRefresh={() => {
+        setMessages([
+          {
+            id: 3,
+            title: 'T3',
+            description: 'D3',
+            image: require('../assets/user.png'),
+          },
+        ]);
+      }}
       renderItem={({ item }) => (
         <ListItem
           title={item.title}
