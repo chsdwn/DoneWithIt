@@ -5,6 +5,7 @@ import { AppButton } from './src/components/AppButton';
 import { AppText } from './src/components/AppText';
 import { Card } from './src/components/Card';
 import { Icon } from './src/components/Icon';
+import { ListItem } from './src/components/ListItem';
 
 import { ListingDetailsScreen } from './src/screens/ListingDetailsScreen';
 import { MessagesScreen } from './src/screens/MessagesScreen';
@@ -18,7 +19,7 @@ export const App = () => {
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <Icon name="email" size={50} backgroundColor="red" iconColor="white" />
+        <ListItem title="title" ImageComponent={<Icon name="email" />} />
       </SafeAreaView>
     </>
   );
