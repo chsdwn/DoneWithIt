@@ -1,9 +1,16 @@
 import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { Formik } from 'formik';
+import * as Yup from 'yup';
 
 import { AppButton } from '../components/AppButton';
+import { AppText } from '../components/AppText';
 import { AppTextInput } from '../components/AppTextInput';
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string().required().email().label('Email'),
+  password: Yup.string().required().min(4).label('Password'),
+});
 
 export const LoginScreen = () => {
   return (
@@ -11,8 +18,9 @@ export const LoginScreen = () => {
       <Image source={require('../assets/logo-red.png')} style={styles.logo} />
       <Formik
         initialValues={{ email: '', password: '' }}
-        onSubmit={console.log}>
-        {({ handleChange, handleSubmit }) => (
+        onSubmit={console.log}
+        validationSchema={validationSchema}>
+        {({ handleChange, handleSubmit, errors }) => (
           <>
             <AppTextInput
               iconName="email"
@@ -23,6 +31,9 @@ export const LoginScreen = () => {
               textContentType="emailAddress"
               onChangeText={handleChange('email')}
             />
+            {errors.email && (
+              <AppText style={{ color: 'red' }}>{errors.email}</AppText>
+            )}
             <AppTextInput
               iconName="lock"
               autoCapitalize="none"
@@ -32,6 +43,9 @@ export const LoginScreen = () => {
               onChangeText={handleChange('password')}
               secureTextEntry
             />
+            {errors.password && (
+              <AppText style={{ color: 'red' }}>{errors.password}</AppText>
+            )}
             <AppButton title="Login" onPress={handleSubmit} />
           </>
         )}
