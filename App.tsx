@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   TextInput,
   Switch,
+  Picker,
 } from 'react-native';
 
 import { AppButton } from './src/components/AppButton';
@@ -26,13 +27,19 @@ import { WelcomeScreen } from './src/screens/WelcomeScreen';
 import colors from './src/config/colors';
 
 export const App = () => {
-  const [isNew, setIsNew] = useState(false);
+  const [language, setLanguage] = useState('java');
 
   return (
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <Switch value={isNew} onValueChange={setIsNew} />
+        <Picker
+          selectedValue={language}
+          style={{ height: 50, width: 100 }}
+          onValueChange={(language, _) => setLanguage(language)}>
+          <Picker.Item label="Java" value="java" />
+          <Picker.Item label="JavaScript" value="js" />
+        </Picker>
       </SafeAreaView>
     </>
   );
