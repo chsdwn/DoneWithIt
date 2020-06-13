@@ -4,6 +4,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import { AppButton } from '../components/AppButton';
+import { AppForm } from '../components/AppForm';
 import { AppFormField } from '../components/AppFormField';
 import { AppText } from '../components/AppText';
 import { AppTextInput } from '../components/AppTextInput';
@@ -19,34 +20,30 @@ export const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <Image source={require('../assets/logo-red.png')} style={styles.logo} />
-      <Formik
+      <AppForm
         initialValues={{ email: '', password: '' }}
         onSubmit={console.log}
         validationSchema={validationSchema}>
-        {() => (
-          <>
-            <AppFormField
-              name="email"
-              iconName="email"
-              autoCapitalize="none"
-              autoCorrect={false}
-              placeholder="Email"
-              keyboardType="email-address"
-              textContentType="emailAddress"
-            />
-            <AppFormField
-              name="lock"
-              iconName="lock"
-              autoCapitalize="none"
-              autoCorrect={false}
-              placeholder="Password"
-              textContentType="password"
-              secureTextEntry
-            />
-            <SubmitButton title="Login" />
-          </>
-        )}
-      </Formik>
+        <AppFormField
+          name="email"
+          iconName="email"
+          autoCapitalize="none"
+          autoCorrect={false}
+          placeholder="Email"
+          keyboardType="email-address"
+          textContentType="emailAddress"
+        />
+        <AppFormField
+          name="lock"
+          iconName="lock"
+          autoCapitalize="none"
+          autoCorrect={false}
+          placeholder="Password"
+          textContentType="password"
+          secureTextEntry
+        />
+        <SubmitButton title="Login" />
+      </AppForm>
     </View>
   );
 };
