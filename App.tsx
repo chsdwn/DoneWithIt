@@ -6,6 +6,7 @@ import {
   StatusBar,
   SafeAreaView,
   TextInput,
+  Switch,
 } from 'react-native';
 
 import { AppButton } from './src/components/AppButton';
@@ -25,13 +26,13 @@ import { WelcomeScreen } from './src/screens/WelcomeScreen';
 import colors from './src/config/colors';
 
 export const App = () => {
-  const [firstName, setFirstName] = useState('');
+  const [isNew, setIsNew] = useState(false);
 
   return (
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <AppTextInput iconName="email" placeholder="Username" />
+        <Switch value={isNew} onValueChange={setIsNew} />
       </SafeAreaView>
     </>
   );
