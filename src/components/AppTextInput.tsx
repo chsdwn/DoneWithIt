@@ -2,8 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import colors from '../config/colors';
-import { IS_ANDROID } from '../constants/app';
+import { colors, text } from '../config/styles';
 
 interface IProps {
   iconName?: string | undefined;
@@ -20,7 +19,7 @@ export const AppTextInput: React.FC<IProps> = ({ iconName, ...rest }) => {
           style={styles.icon}
         />
       )}
-      <TextInput style={styles.textInput} {...rest} />
+      <TextInput style={text} {...rest} />
     </View>
   );
 };
@@ -37,10 +36,5 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 10,
-  },
-  textInput: {
-    fontSize: 18,
-    fontFamily: IS_ANDROID ? 'Roboto' : 'Avenir',
-    color: colors.dark,
   },
 });
