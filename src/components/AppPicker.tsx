@@ -18,12 +18,16 @@ interface IProps {
   iconName?: string | undefined;
   placeholder: string;
   items?: { label: string; value: number }[];
+  selectedItem?: { label: string; value: number };
+  onSelectItem: (item: { label: string; value: number }) => void;
 }
 
 export const AppPicker: React.FC<IProps> = ({
   iconName,
   placeholder,
   items,
+  selectedItem,
+  onSelectItem,
   ...rest
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -40,7 +44,9 @@ export const AppPicker: React.FC<IProps> = ({
               style={styles.icon}
             />
           )}
-          <AppText style={styles.text}>{placeholder}</AppText>
+          <AppText style={styles.text}>
+            {selectedItem ? selectedItem.label : placeholder}
+          </AppText>
           <MaterialCommunityIcons
             name="chevron-down"
             size={20}
@@ -54,7 +60,13 @@ export const AppPicker: React.FC<IProps> = ({
           data={items}
           keyExtractor={(item) => item.value.toString()}
           renderItem={({ item }) => (
-            <PickerItem label={item.label} onPress={() => {}} />
+            <PickerItem
+              label={item.label}
+              onPress={() => {
+                setModalVisible(false);
+                onSelectItem(item);
+              }}
+            />
           )}
         />
       </Modal>

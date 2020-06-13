@@ -34,11 +34,19 @@ const categories = [
 ];
 
 export const App = () => {
+  const [category, setCategory] = useState(categories[0]);
+
   return (
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <AppPicker placeholder="Category" iconName="apps" items={categories} />
+        <AppPicker
+          placeholder="Category"
+          iconName="apps"
+          items={categories}
+          selectedItem={category}
+          onSelectItem={setCategory}
+        />
         <AppTextInput placeholder="Email" iconName="email" />
       </SafeAreaView>
     </>
