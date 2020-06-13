@@ -19,7 +19,7 @@ export const AppTextInput: React.FC<IProps> = ({ iconName, ...rest }) => {
           style={styles.icon}
         />
       )}
-      <TextInput style={text} {...rest} />
+      <TextInput style={[text, { flex: 1 }]} {...rest} />
     </View>
   );
 };
