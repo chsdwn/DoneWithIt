@@ -9,5 +9,5 @@ interface IProps {
 }
 
 export const AppText: React.FC<IProps> = ({ children, style }) => {
-  return <Text style={[text, { color: 'tomato' }, style]}>{children}</Text>;
+  return <Text style={[text, style]}>{children}</Text>;
 };

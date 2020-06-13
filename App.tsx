@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 
 import { AppButton } from './src/components/AppButton';
+import { AppPicker } from './src/components/AppPicker';
 import { AppText } from './src/components/AppText';
 import { AppTextInput } from './src/components/AppTextInput';
 import { Card } from './src/components/Card';
@@ -27,19 +28,12 @@ import { WelcomeScreen } from './src/screens/WelcomeScreen';
 import colors from './src/config/colors';
 
 export const App = () => {
-  const [language, setLanguage] = useState('java');
-
   return (
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <Picker
-          selectedValue={language}
-          style={{ height: 50, width: 100 }}
-          onValueChange={(language, _) => setLanguage(language)}>
-          <Picker.Item label="Java" value="java" />
-          <Picker.Item label="JavaScript" value="js" />
-        </Picker>
+        <AppPicker placeholder="Category" iconName="apps" />
+        <AppTextInput placeholder="Email" iconName="email" />
       </SafeAreaView>
     </>
   );
