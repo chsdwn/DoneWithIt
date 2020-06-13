@@ -5,21 +5,25 @@ import {
   TouchableWithoutFeedback,
   Modal,
   Button,
+  FlatList,
 } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { AppText } from './AppText';
+import { PickerItem } from './PickerItem';
 
 import { colors } from '../config/styles';
 
 interface IProps {
   iconName?: string | undefined;
   placeholder: string;
+  items?: { label: string; value: number }[];
 }
 
 export const AppPicker: React.FC<IProps> = ({
   iconName,
   placeholder,
+  items,
   ...rest
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -46,6 +50,13 @@ export const AppPicker: React.FC<IProps> = ({
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
         <Button title="Close" onPress={() => setModalVisible(false)} />
+        <FlatList
+          data={items}
+          keyExtractor={(item) => item.value.toString()}
+          renderItem={({ item }) => (
+            <PickerItem label={item.label} onPress={() => {}} />
+          )}
+        />
       </Modal>
     </>
   );

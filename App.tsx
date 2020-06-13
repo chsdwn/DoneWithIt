@@ -27,12 +27,18 @@ import { WelcomeScreen } from './src/screens/WelcomeScreen';
 
 import colors from './src/config/colors';
 
+const categories = [
+  { label: 'Furniture', value: 1 },
+  { label: 'Clothing', value: 2 },
+  { label: 'Cameras', value: 3 },
+];
+
 export const App = () => {
   return (
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <AppPicker placeholder="Category" iconName="apps" />
+        <AppPicker placeholder="Category" iconName="apps" items={categories} />
         <AppTextInput placeholder="Email" iconName="email" />
       </SafeAreaView>
     </>
