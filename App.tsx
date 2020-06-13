@@ -10,6 +10,7 @@ import {
 
 import { AppButton } from './src/components/AppButton';
 import { AppText } from './src/components/AppText';
+import { AppTextInput } from './src/components/AppTextInput';
 import { Card } from './src/components/Card';
 import { Icon } from './src/components/Icon';
 import { ListItem } from './src/components/ListItem';
@@ -30,12 +31,7 @@ export const App = () => {
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <Text>{firstName}</Text>
-        <TextInput
-          placeholder="First Name"
-          style={{ borderBottomWidth: 1, borderBottomColor: '#ccc' }}
-          onChangeText={setFirstName}
-        />
+        <AppTextInput iconName="email" placeholder="Username" />
       </SafeAreaView>
     </>
   );
