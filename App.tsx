@@ -1,5 +1,12 @@
-import React from 'react';
-import { StyleSheet, Text, View, StatusBar, SafeAreaView } from 'react-native';
+import React, { useState } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  StatusBar,
+  SafeAreaView,
+  TextInput,
+} from 'react-native';
 
 import { AppButton } from './src/components/AppButton';
 import { AppText } from './src/components/AppText';
@@ -17,11 +24,18 @@ import { WelcomeScreen } from './src/screens/WelcomeScreen';
 import colors from './src/config/colors';
 
 export const App = () => {
+  const [firstName, setFirstName] = useState('');
+
   return (
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <ListingsScreen />
+        <Text>{firstName}</Text>
+        <TextInput
+          placeholder="First Name"
+          style={{ borderBottomWidth: 1, borderBottomColor: '#ccc' }}
+          onChangeText={setFirstName}
+        />
       </SafeAreaView>
     </>
   );
