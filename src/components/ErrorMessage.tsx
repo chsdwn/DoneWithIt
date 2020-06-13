@@ -3,8 +3,12 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { AppText } from './AppText';
 
-export const ErrorMessage: React.FC<{ error: string | undefined }> = ({
-  error,
-}) => (error ? <AppText style={{ color: 'red' }}>{error}</AppText> : null);
+interface IProps {
+  error: string | undefined;
+  visible: boolean | undefined;
+}
+
+export const ErrorMessage: React.FC<IProps> = ({ error, visible }) =>
+  error && visible ? <AppText style={{ color: 'red' }}>{error}</AppText> : null;
 
 const styles = StyleSheet.create({});
