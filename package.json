@@ -13,6 +13,7 @@
     "@react-native-community/hooks": "^2.6.0",
     "@react-native-community/picker": "^1.6.1",
     "@types/react-native-vector-icons": "^6.4.5",
+    "formik": "^2.1.4",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-gesture-handler": "^1.6.1",
