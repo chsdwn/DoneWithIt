@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, StatusBar, SafeAreaView } from 'react-native';
 
+import { ListingEditScreen } from './src/screens/ListingEditScreen';
 import { LoginScreen } from './src/screens/LoginScreen';
 
 export const App = () => {
@@ -8,7 +9,7 @@ export const App = () => {
     <>
       <StatusBar />
       <SafeAreaView style={styles.container}>
-        <LoginScreen />
+        <ListingEditScreen />
       </SafeAreaView>
     </>
   );

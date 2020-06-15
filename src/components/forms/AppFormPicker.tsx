@@ -9,10 +9,10 @@ import {
 } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { AppText } from './AppText';
-import { PickerItem } from './PickerItem';
+import { AppText } from '../AppText';
+import { PickerItem } from '../PickerItem';
 
-import { colors } from '../config/styles';
+import { colors } from '../../config/styles';
 
 interface IProps {
   iconName?: string | undefined;
@@ -22,7 +22,7 @@ interface IProps {
   onSelectItem: (item: { label: string; value: number }) => void;
 }
 
-export const AppPicker: React.FC<IProps> = ({
+export const AppFormPicker: React.FC<IProps> = ({
   iconName,
   placeholder,
   items,
