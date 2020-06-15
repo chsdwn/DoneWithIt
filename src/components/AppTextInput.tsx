@@ -19,7 +19,11 @@ export const AppTextInput: React.FC<IProps> = ({ iconName, ...rest }) => {
           style={styles.icon}
         />
       )}
-      <TextInput style={[text, { flex: 1 }]} {...rest} />
+      <TextInput
+        placeholderTextColor={colors.medium}
+        style={[text, { flex: 1 }]}
+        {...rest}
+      />
     </View>
   );
 };
