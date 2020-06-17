@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableWithoutFeedback } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import colors from '../config/colors';
+import colors from '../../config/colors';
 
 interface IProps {
   onPress: () => void;

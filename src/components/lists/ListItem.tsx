@@ -8,9 +8,9 @@ import {
 } from 'react-native';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 
-import { AppText } from './AppText';
+import { AppText } from '../AppText';
 
-import colors from '../config/colors';
+import colors from '../../config/colors';
 
 interface IProps {
   image?: ImageURISource[];

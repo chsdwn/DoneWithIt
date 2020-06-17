@@ -11,7 +11,7 @@ interface IProps {
 export const SubmitButton: React.FC<IProps> = ({ title }) => {
   const { handleSubmit } = useFormikContext();
 
-  return <AppButton title="Login" onPress={handleSubmit} />;
+  return <AppButton title={title} onPress={handleSubmit} />;
 };
 
 const styles = StyleSheet.create({});

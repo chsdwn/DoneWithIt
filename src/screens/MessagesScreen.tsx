@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, FlatList } from 'react-native';
 
-import { ListItem } from '../components/ListItem';
-import { ListItemDeleteAction } from '../components/ListItemDeleteAction';
-import { ListItemSeperator } from '../components/ListItemSeperator';
+import {
+  ListItem,
+  ListItemDeleteAction,
+  ListItemSeperator,
+} from '../components/lists/';
 
 import { IMessage } from '../models/IMessage';
 
