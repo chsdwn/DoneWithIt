@@ -6,11 +6,16 @@ import { colors, text } from '../config/styles';
 
 interface IProps {
   iconName?: string | undefined;
+  width?: number;
 }
 
-export const AppTextInput: React.FC<IProps> = ({ iconName, ...rest }) => {
+export const AppTextInput: React.FC<IProps> = ({
+  iconName,
+  width = '100%',
+  ...rest
+}) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { width }]}>
       {iconName && (
         <MaterialCommunityIcons
           name={iconName}
@@ -33,7 +38,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.light,
     borderRadius: 25,
     flexDirection: 'row',
-    width: '100%',
     padding: 15,
     marginVertical: 10,
     alignItems: 'center',

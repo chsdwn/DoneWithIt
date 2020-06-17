@@ -20,6 +20,7 @@ interface IProps {
   items?: { label: string; value: number }[];
   selectedItem?: { label: string; value: number };
   onSelectItem: (item: { label: string; value: number }) => void;
+  width?: number;
 }
 
 export const AppFormPicker: React.FC<IProps> = ({
@@ -28,6 +29,7 @@ export const AppFormPicker: React.FC<IProps> = ({
   items,
   selectedItem,
   onSelectItem,
+  width = '100%',
   ...rest
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -35,7 +37,7 @@ export const AppFormPicker: React.FC<IProps> = ({
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
-        <View style={styles.container}>
+        <View style={[styles.container, { width }]}>
           {iconName && (
             <MaterialCommunityIcons
               name={iconName}
@@ -81,7 +83,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.light,
     borderRadius: 25,
     flexDirection: 'row',
-    width: '100%',
     padding: 15,
     marginVertical: 10,
     alignItems: 'center',

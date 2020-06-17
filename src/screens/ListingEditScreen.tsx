@@ -40,11 +40,13 @@ export const ListingEditScreen = () => {
           name="price"
           placeholder="Price"
           keyboardType="numeric"
+          width={120}
         />
         <AppFormPicker
           items={categories}
           name="category"
           placeholder="Category"
+          width="50%"
         />
         <AppFormField
           maxLength={255}
