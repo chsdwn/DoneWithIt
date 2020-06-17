@@ -8,6 +8,10 @@ interface IProps {
   style?: StyleProp<TextStyle>;
 }
 
-export const AppText: React.FC<IProps> = ({ children, style }) => {
-  return <Text style={[text, style]}>{children}</Text>;
+export const AppText: React.FC<IProps> = ({ children, style, ...rest }) => {
+  return (
+    <Text style={[text, style]} {...rest}>
+      {children}
+    </Text>
+  );
 };
