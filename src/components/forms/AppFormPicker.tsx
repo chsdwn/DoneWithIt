@@ -21,6 +21,7 @@ interface IProps {
   selectedItem?: { label: string; value: number };
   onSelectItem: (item: { label: string; value: number }) => void;
   width?: number;
+  PickerItemComponent?: React.FC<any>;
 }
 
 export const AppFormPicker: React.FC<IProps> = ({
@@ -30,6 +31,7 @@ export const AppFormPicker: React.FC<IProps> = ({
   selectedItem,
   onSelectItem,
   width = '100%',
+  PickerItemComponent = PickerItem,
   ...rest
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -64,7 +66,7 @@ export const AppFormPicker: React.FC<IProps> = ({
           data={items}
           keyExtractor={(item) => item.value.toString()}
           renderItem={({ item }) => (
-            <PickerItem
+            <PickerItemComponent
               label={item.label}
               onPress={() => {
                 setModalVisible(false);
