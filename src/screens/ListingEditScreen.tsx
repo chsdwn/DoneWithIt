@@ -1,27 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import * as Yup from 'yup';
+import { StyleSheet, View } from 'react-native';
 
+import { CategoryPickerItem } from '../components/CategoryPickerItem';
 import {
   AppForm,
   AppFormField,
   AppFormPicker,
   SubmitButton,
 } from '../components/forms';
-import { CategoryPickerItem } from '../components/CategoryPickerItem';
 
-const validationSchema = Yup.object().shape({
-  title: Yup.string().required().min(1).label('Title'),
-  price: Yup.number().required().min(1).max(10000).label('Price'),
-  description: Yup.string().label('Description'),
-  category: Yup.object().required().nullable().label('Category'),
-});
-
-const categories = [
-  { label: 'Furniture', value: 1 },
-  { label: 'Clothing', value: 2 },
-  { label: 'Camera', value: 3 },
-];
+import {
+  categories,
+  validationSchema,
+} from '../constants/screens/listingEditScreen';
 
 export const ListingEditScreen = () => {
   return (
@@ -48,6 +39,7 @@ export const ListingEditScreen = () => {
           name="category"
           placeholder="Category"
           width="50%"
+          numberOfColumns={3}
           PickerItemComponent={CategoryPickerItem}
         />
         <AppFormField

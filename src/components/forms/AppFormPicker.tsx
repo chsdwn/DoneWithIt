@@ -14,13 +14,16 @@ import { PickerItem } from '../PickerItem';
 
 import { colors } from '../../config/styles';
 
+import { IItem } from '../../models/IITem';
+
 interface IProps {
   iconName?: string | undefined;
   placeholder: string;
-  items?: { label: string; value: number }[];
+  items?: IItem[];
   selectedItem?: { label: string; value: number };
   onSelectItem: (item: { label: string; value: number }) => void;
-  width?: number;
+  width?: number | string;
+  numberOfColumns?: number;
   PickerItemComponent?: React.FC<any>;
 }
 
@@ -31,6 +34,7 @@ export const AppFormPicker: React.FC<IProps> = ({
   selectedItem,
   onSelectItem,
   width = '100%',
+  numberOfColumns = 1,
   PickerItemComponent = PickerItem,
   ...rest
 }) => {
@@ -65,9 +69,10 @@ export const AppFormPicker: React.FC<IProps> = ({
         <FlatList
           data={items}
           keyExtractor={(item) => item.value.toString()}
+          numColumns={numberOfColumns}
           renderItem={({ item }) => (
             <PickerItemComponent
-              label={item.label}
+              item={item}
               onPress={() => {
                 setModalVisible(false);
                 onSelectItem(item);
